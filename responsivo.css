@@ -1,0 +1,91 @@
+*{box-sizing:border-box;margin:0;}
+
+body{text-align:center;}
+
+header{ width: 100vw;height: 10vh;background-color:black;}
+
+nav{display:flex;justify-content:center;align-items:center;gap:10px;width:100vw;}
+
+main{width: 100vw;height: 80vh;background-image:linear-gradient(red,darkred);display: flex;justify-content: center;align-items: center;}
+
+section{width: 40%;height: 80%; background-image: linear-gradient(gray,white); margin: 5px;border-radius: 15px;}
+
+button{margin:20px;border:0;border-radius:8%;background-color: whitesmoke;color:rgb(0,0,0);padding:1% 8%;}
+
+button:hover{background-color:rgb(208, 198, 198);cursor: pointer;padding:1% 8%}
+
+footer{width: 100vw;height: 10vh;background-image: linear-gradient(black);}
+
+.q1{color: white;text-align: center;}
+
+
+
+.l1{text-align:justify;margin:5px;}
+.l2{text-align:left;margin:10px;font-size:18px;}
+.l3{text-align:left;margin:10px;font-size:18px;}
+
+/* tablet */
+/*
+======================================================
+MEDIA QUERY PARA TABLETS (Telas entre 601px e 1024px)
+Geralmente, as sections ficam na horizontal, mas maiores.
+======================================================
+*/
+@media (max-width: 1024px) {
+    main {
+        /* Permite que o conteúdo do 'main' se ajuste em altura */
+        height: auto; 
+        padding: 20px 0;
+    }
+    
+    section {
+        /* No tablet, as sections ocupam 80% da largura, dando um bom espaço */
+        width: 80%;
+        /* Altura automática para se adaptar ao conteúdo */
+        height: auto; 
+        min-height: 400px; /* Garante uma altura mínima */
+    }
+
+    button {
+        /* Aumenta o padding no tablet para facilitar o toque */
+        padding: 2% 10%;
+    }
+}
+/*
+======================================================
+MEDIA QUERY PARA CELULARES (Telas até 600px)
+Os elementos principais devem se empilhar (coluna).
+======================================================
+*/
+@media (max-width: 600px) {
+    header {
+        height: auto; /* Altura da header se ajusta se o conteúdo for maior */
+        padding: 10px 0;
+    }
+    
+    nav {
+        /* Altera o layout da navegação para vertical em telas muito pequenas */
+        flex-direction: column; 
+        gap: 5px;
+    }
+
+    main {
+        /* Garante que as sections fiquem empilhadas, uma abaixo da outra */
+        flex-direction: column; 
+        height: auto;
+    }
+
+    section {
+        /* No celular, cada section ocupa 95% da largura, empilhando na vertical */
+        width: 95%; 
+        height: auto;
+        min-height: 300px; /* Reduz a altura mínima para telas menores */
+    }
+
+    button {
+        /* Aumenta ainda mais o padding e largura para botões mais fáceis de clicar */
+        padding: 3% 15%;
+        margin: 10px auto; /* Centraliza o botão */
+        display: block; /* Ocupa a própria linha */
+    }
+}
